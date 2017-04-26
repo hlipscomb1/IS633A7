@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+         id          = "edu.uab.business.studentapp"
+         versionCode = "1"
+         version     = "0.0.1" >
+    
+  <!-- versionCode is optional and Android only -->
+  
+  <name>IS 633 Mobile App</name>
+  
+  <description>
+    Mobile App Assignments
+  </description>
+  
+  <author>
+    Hakeem J. Lipscomb
+  </author>
+  
+  <preference name="phonegap-version" value="cli-6.3.0" />
+    <plugin name="cordova-plugin-whitelist" source="npm" />
+      <access origin="*" />
+      <plugin name="cordova-plugin-geolocation" source="npm" />
+      <plugin name="cordova-plugin-splashscreen" source="npm" />
+<platform name="ios"> <!--iPhone 6 / 6+ and iPad-->
+    <icon src="images/awesome.png" platform="ios" width="180" height="180" />
+    <icon src="images/square.png" platform="ios" width="152" height="152" />
+    <splash src="images/applecolor.png" width="1242" height="2208" />
+    <splash src="images/apple2.png" width="2208" height="1242" />
+    <splash src="images/screen-ipad-portrait-2x.png" width="1536" height="2048" />
+    <splash src="images/screen-ipad-landscape-2x.png" width="2048" height="1536" />
+</platform>
+<platform name="android">
+    <icon gap:platform="android" gap:qualifier="ldpi" src="images/icon-36-ldpi.png" />
+    <icon gap:platform="android" gap:qualifier="mdpi" src="images/icon-48-mdpi.png" />
+    <icon gap:platform="android" gap:qualifier="hdpi" src="images/icon-72-hdpi.png" />
+    <icon gap:platform="android" gap:qualifier="xhdpi" src="images/icon-96-xhdpi.png" />
+    <icon gap:platform="android" gap:qualifier="xxhdpi" src="images/icon-144-xxhdpi.png" />
+    <icon gap:platform="android" gap:qualifier="xxxhdpi" src="images/icon-192-xxxhdpi.png" />
+    <splash gap:platform="android" gap:qualifier="land-hdpi" src="images/screen-hdpi-landscape.png" />
+    <splash gap:platform="android" gap:qualifier="land-ldpi" src="images/screen-ldpi-landscape.png" />
+    <splash gap:platform="android" gap:qualifier="land-mdpi" src="images/screen-mdpi-landscape.png" />
+    <splash gap:platform="android" gap:qualifier="land-xhdpi" src="images/screen-xhdpi-landscape.png" />
+    <splash gap:platform="android" gap:qualifier="port-hdpi" src="images/screen-hdpi-portrait.png" />
+    <splash gap:platform="android" gap:qualifier="port-ldpi" src="images/screen-ldpi-portrait.png" />
+    <splash gap:platform="android" gap:qualifier="port-mdpi" src="images/screen-mdpi-portrait.png" />
+    <splash gap:platform="android" gap:qualifier="port-xhdpi" src="images/screen-xhdpi-portrait.png" />
+</platform>
+<preference name="SplashScreenDelay" value="3000" />
+<plugin name="cordova-plugin-battery-status" source="npm" />
+<plugin name="cordova-plugin-photo-library" source="npm" />
+</widget>
+        

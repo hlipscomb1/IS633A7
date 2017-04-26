@@ -1,0 +1,279 @@
+body {
+  max-width: 600px;
+}
+
+h1 {
+  font-family: helvetica neue;
+  font-size: 45px;
+  text-align: center;
+  color: #333;
+}
+
+h2 {
+  font-family: helvetica neue;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+  color: #333;
+}
+
+p {
+  font-family: helvetica neue;
+  font-size: 15px;
+  font-weight: 200;
+  text-align: center;
+  color: #333;
+}
+
+footer {
+  font-family: helvetica neue;
+  font-size: 10px;
+  font-weight: 800;
+  position: absolute;
+  text-align: center;
+  padding-top: 10px;
+  color: black;
+}
+
+label {
+  display: inline-block;
+  font-family: helvetica neue;
+  font-size: 10px;
+}
+
+table {
+  display: inline-block;
+  font-family: helvetica neue;
+  font-size: 10px;
+}
+
+#back {
+  display: inline-block;
+  font-family: helvetica neue;
+  font-size: 10px;
+  text-align: center;
+}
+
+#menuSelect{
+  text-align: center;
+  margin: auto;
+}
+
+#first{
+  text-align: center;
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+}
+
+#second{
+  text-align: center;
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+}
+
+#third{
+  text-align: center;
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+}
+
+#fourth{
+  text-align: center;
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+}
+#fifth{
+  text-align: center;
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+}
+#sixth{
+  text-align: center;
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+}
+#seventh{
+  text-align: center;
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+}
+#eighth{
+  text-align: center;
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+}
+#ninth{
+  text-align: center;
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+}
+#tenth{
+  text-align: center;
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+}
+#customerDisplay{
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  padding-top: 15px;
+}
+
+#orderDisplay{
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  padding-top: 15px;
+}
+
+#currentorderDisplay{
+  text-align: center;
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+  padding-top: 15px;
+}
+
+#historyDisplay{
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  padding-top: 15px;
+}
+
+#addcustomerdisplay{
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  padding-top: 15px;
+}
+
+#deletecustomerdisplay{
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  padding-top: 15px;
+}
+
+
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (orientation: portrait) {
+    #first {
+        width: 375px;
+    }
+    #second {
+        width: 375px;
+    }
+    #third {
+        width: 375px;
+    }
+    #fourth {
+        width: 375px;
+    }
+    #fifth {
+        width: 375px;
+    }
+    #sixth {
+        width: 375px;
+    }
+    #seventh {
+        width: 375px;
+    }
+    #eighth {
+        width: 375px;
+    }
+    #ninth {
+        width: 375px;
+    }
+    #tenth {
+        width: 375px;
+    }
+    table, th, td {
+        width: 325px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    p {
+        margin-left: 25px;
+        margin-right: 25px
+    }
+}
+
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (orientation: landscape) {
+    #first {
+        width: 600px;
+    }
+    #second {
+        width: 600px;
+    }
+    #third {
+        width: 600px;
+    }
+    #fourth {
+        width: 600px;
+    }
+    #fifth {
+        width: 600px;
+    }
+    #sixth {
+        width: 600px;
+    }
+    #seventh {
+        width: 600px;
+    }
+    #eighth {
+        width: 600px;
+    }
+    #ninth {
+        width: 600px;
+    }
+    #tenth {
+        width: 600px;
+    }
+    table, th, td {
+        width: 550px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    p {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+#confirm{
+  text-align: center;
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+  padding-top: 15px;
+}
+
+#orders2{
+  text-align: center;
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+  padding-top: 15px;
+}
+
+#photo {
+  width: 75%;
+  float: left;
+  padding: 5px;
+}

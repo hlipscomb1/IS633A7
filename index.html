@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Assignment #7</title>
+    <script src="js/a7.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/a7.css" />
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script>
+        document.addEventListener("batterystatus", onBatteryStatus, false);
+
+        function onBatteryStatus() {
+            window.addEventListener("batterycritical", bCritical, false);
+            window.addEventListener("batterylow", bLow, false);
+            }
+
+        function bCritical(info) {
+            alert("Your Battery @ critical Status" + info.level);
+        }
+
+        function bLow(info) {
+            alert("Battery @ low" + info.level);
+        }
+
+
+        function onBatteryStatus(info) {
+            alert("Level: " + info.level + " isPlugged: " + info.isPlugged);
+        }
+    </script>
+</head>
+
+<body>
+<h1>Assignment #7 Hakeem Lipscomb</h1>
+<hr>
+    <section id="options">
+    <select onchange="ShowMenu(value);" id="menu">
+        <option value="none">Please select an option from the list</option>
+        <option value="first">Get All Customers</option>
+        <option value="second">Customer's Order History</option>
+        <option value="third">Current Orders</option>
+        <option value="fourth">Update Order Information</option>
+        <option value="fifth">Create Customer</option>
+        <option value="sixth">Delete Customer</option>
+        <option value="seventh">Location</option>
+        <option value="eighth">Battery Status</option>
+        <option value="ninth">Photos</option>
+        <option value="tenth">About Information</option>
+    </select>
+    </section>
+    <hr>
+    <section id="first" class="first">
+    <button onclick="addNew();" id="add">Add A New Customer</button>
+    <p id="customerDisplay"></p>
+</section>
+<section id="second" class="second">
+    <h2>Order History</h2>
+    <label id="custid">Please enter a Customer ID</label>
+    <input type="text" id="custidinput">
+    <br>
+    <br>
+    <button onclick="getOrders();" id="orders">Get Customer Orders</button>
+    <button id='back' onClick="goBack();";>Back</button>
+    <br>
+    <br>
+    <label id="orderDisplay"></label>
+</section>
+<section id="third" class="third">
+    <h2>Current Orders</h2>
+    <br>
+    <label id="custid2">Please enter a Customer ID</label>
+    <input type="text" id="custidinput2">
+    <br>
+    <br>
+    <button onclick="getCurrent();" id="orders2">Get Customer Current Orders</button>
+    <button id='back' onClick="goBack();">Go Back to Customer List</button>
+    <br>
+    <br>
+    <label id="currentorderDisplay"></label>
+</section>
+<section id="fourth" class="fourth">
+    <h2>Update Order</h2>
+    <label id="ordid">Please enter a Order ID</label>
+    <input type="text" id="orderid" disabled="true"> 
+    <br>
+    <label id="ordid">Please enter a New Shipping Address</label>
+    <input type="text" id="shipaddress">
+    <br>
+    <label id="ordid">Please enter a New Ship City</label>
+    <input type="text" id="shipcity">
+    <br>
+    <label id="ordid">Please enter a New Ship Name</label>
+    <input type="text" id="shipname">
+    <br>
+    <label id="ordid">Please enter a New Postal Code</label>
+    <input type="text" id="postalinput">
+    <br>
+    <br>
+    <button id='back' onClick="goBack();">Go Back to Customer List</button>
+    <button id='modify' onclick="Update();">Update Order</button>
+    <br>
+    <br>
+    <label id="historyDisplay"></label>
+</section>
+<section id="fifth">
+    <h2>Create Customer</h2>
+    <label id="custid3">Please enter a Customer ID</label>
+    <input type="text" onkeydown="upperCaseF(this);"/ id="custidinput3" placeholder="5 Uppercase Letters"> 
+    <br>
+    <label id="ordid">Please enter a Company Name</label>
+    <input type="text" id="addcname">
+    <br>
+    <label id="ordid">Please enter a City</label>
+    <input type="text" id="addcity">
+    <br>
+    <br>
+    <button id='back' onClick="goBack();">Go Back to Customer List</button>
+    <button id='add' onclick="addCus();">Create Customer</button>
+    <br>
+    <br>
+    <label id="addcustomerdisplay"></label>
+</section>
+<section id="sixth" class="sixth">
+    <h2>Delete Customer</h2>
+    <label id="custid4">Please enter a Customer ID</label>
+    <input type="text" id="custidinput4">
+    <br>
+    <br>
+    <button id='back' onClick="goBack();">Go Back to Customer List</button>
+    <button onclick="ConfirmD();" id="orders">Delete Employee</button>
+    <br>
+    <div id="confirm">
+        <h2>Are you sure you want to Delete this Employee?</h2>
+        <button onclick="Delete();">Confirm</button>
+        <button onclick="Reject();">No</button>
+      </div>
+</section>
+<section id="seventh" class="seventh">
+        <h2>Geolocation</h2>
+        <button onclick="CurrentLocation();">Find Current Location</button>
+        <br>
+        <br>
+        <label class="inputprompt">Latitude:</label>
+        <input id="latitude">
+        <br>
+        <label class="inputprompt">Longitude:</label>
+        <input id="longitude">
+        <br>
+        <br>
+        <img id="currentplace" src="placeholder.png"/>
+        <br>
+        <br>
+    </section>
+<section id="eighth">
+        <h2>Take a Picture</h2>
+        <button onclick="CheckBattery()">Check Battery Status</button>
+    </section>
+    <section id="ninth">
+        <h2>Contacts</h2>
+        <hr>
+        <h3>Select a Contact</h3>
+        <button onclick="SelectContact();">Select a Contact</button>
+        <br>
+        <br>
+        <label id="contactname"></label>
+        <hr>
+        <h3>Search Contacts</h3>
+        <label class="inputprompt">Last Name:</label>
+        <input type="text" id="contactlastname">
+        <button id="searchcontacts" onclick="SearchContacts();">Search Contacts</button>
+        <br>
+        <br>
+        <label id="contactsearchresults"></label>
+        <br>
+        <br>
+    </section>
+<section id="tenth" class="tenth">
+        <h1>About Information:</h1>
+        <h2>Hakeem J. Lipscomb</h2>
+        <p>This app is designed to allow the display of Customer Information and to show a Customer's Order History. Additional features allows the creation and deletion of a customer. The app is only intened for this use, any other purpose is UNAUTHORIZED.</p>
+</section>
+
+</body>
+</html>

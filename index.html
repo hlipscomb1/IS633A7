@@ -6,27 +6,6 @@
     <script src="js/a7.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/a7.css" />
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script>
-        document.addEventListener("batterystatus", onBatteryStatus, false);
-
-        function onBatteryStatus() {
-            window.addEventListener("batterycritical", bCritical, false);
-            window.addEventListener("batterylow", bLow, false);
-            }
-
-        function bCritical(info) {
-            alert("Your Battery @ critical Status" + info.level);
-        }
-
-        function bLow(info) {
-            alert("Battery @ low" + info.level);
-        }
-
-
-        function onBatteryStatus(info) {
-            alert("Level: " + info.level + " isPlugged: " + info.isPlugged);
-        }
-    </script>
 </head>
 
 <body>
@@ -151,25 +130,16 @@
         <br>
     </section>
 <section id="eighth">
-        <h2>Take a Picture</h2>
-        <button onclick="CheckBattery()">Check Battery Status</button>
+        <h2>Battery Status</h2>
+        <button onclick="GetBatteryStatus()">Get Battery Status</button>
+        <br>
+        <br>
     </section>
     <section id="ninth">
-        <h2>Contacts</h2>
-        <hr>
-        <h3>Select a Contact</h3>
-        <button onclick="SelectContact();">Select a Contact</button>
         <br>
+        <h2>Check Network Connection</h2>
         <br>
-        <label id="contactname"></label>
-        <hr>
-        <h3>Search Contacts</h3>
-        <label class="inputprompt">Last Name:</label>
-        <input type="text" id="contactlastname">
-        <button id="searchcontacts" onclick="SearchContacts();">Search Contacts</button>
-        <br>
-        <br>
-        <label id="contactsearchresults"></label>
+        <button onclick="NetworkConnection();">Check the type of Network Connection</button>
         <br>
         <br>
     </section>

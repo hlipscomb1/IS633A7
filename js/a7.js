@@ -783,72 +783,29 @@ function showPosition(position)
     document.getElementById("longitude").innerHTML = longitude;
 }
 
-function TakePhoto()
+function GetBatteryStatus()
 {
-    navigator.camera.getPicture(onSuccess, onFail, { quality: 20, destinationtype: destinationtype.FILE_URl, saveToPhotoAlbum: true });
+    window.addEventListener("batterystatus",onBatteryStatus,false);
 }
 
-function onSuccess(imageURl)
+function onBatteryStatus(info)
 {
-    var picdisplay = document.getElementById("photo");
-    picdisplay.style.display = "relative";
-    picdisplay.src = imageURl;
+    alert("Battery Level: " + info.level + "%");
 }
 
-function onFail(message)
+function NetworkConnection()
 {
-    alert("Failed because: " + message);
-}
-
-function SelectContact()
-{
-    navigator.contacts.pickContact(function(contact)
-        {
-            var contactinfo = "";
-            contactinfo += contact.name.givenName + " " + contact.name.familyName + "<br>";
-            var count = 0;
-            if(contact.phoneNumbers !== null)
-            {
-                for(count=0; count < contact.phoneNumbers.length; count++)
-                {
-                    contactinfo += contact.phoneNumbers[count].type + ": " + contact.phoneNumbers[count].value + "<br>";
-                }
-            }
-            if(contact.emails !== null)
-            {
-                for(count=0; count < contact.emails.length; count++)
-                {
-                    contactinfo += contact.emails[count].type + ": " + contact.emails[count].value + "<br>";
-                }
-            }
-            document.getElementById("contactname").innerHTML = contactinfo;
-        }, function(err)
-           {
-            alert("Error: " + err);
-           });
-}
-
-function SearchContacts()
-{
-    var options = new ContactFindOptions();
-    options.filter = document.getElementById("contactlastname").value;
-    options.multiple = true;
-    options.desiredFields = [navigator.contacts.fieldType.name];
-    var fields = [navigator.contacts.fieldType.name];
-    navigator.contacts.find(fields, contactSuccess, contactError, options);
-}
-
-function contactSuccess(contacts)
-{
-    var contactinfo = "Contact Names: " + "<br>";
-    for(var count=0; count<contacts.length; count++)
-    {
-        contactinfo += contacts[count].name.givenName + " " + contacts[count].name.familyName + "<br>";
-    }
-    document.getElementById("contactsearchresults").innerHTML = contactinfo;
-}
-
-function contactError(contactError)
-{
-    alert('onError!');
+    var networkState = navigator.connection.type;
+ 
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.CELL]     = 'Cell generic connection';
+    states[Connection.NONE]     = 'No network connection';
+ 
+    alert('Connection type: ' + states[networkState]);
 }

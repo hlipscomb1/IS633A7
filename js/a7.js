@@ -783,14 +783,14 @@ function showPosition(position)
     document.getElementById("longitude").innerHTML = longitude;
 }
 
-function GetBatteryStatus()
+function BatteryLevel()
 {
-    window.addEventListener("batterystatus",onBatteryStatus,false);
+    window.addEventListener("batterystatus", onBatteryStatus, false);
 }
 
 function onBatteryStatus(info)
 {
-    alert("Battery Level: " + info.level + "%");
+    alert("Percentage: " + info.level + "%" + " isPlugged: " + info.isPlugged);
 }
 
 function NetworkConnection()
@@ -803,7 +803,7 @@ function NetworkConnection()
     states[Connection.WIFI]     = 'WiFi connection';
     states[Connection.CELL_2G]  = 'Cell 2G connection';
     states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.CELL_4G]  = 'Cell LTE connection';
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
  

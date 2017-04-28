@@ -48,7 +48,7 @@
     <splash gap:platform="android" gap:qualifier="port-xhdpi" src="images/screen-xhdpi-portrait.png" />
 </platform>
 <preference name="SplashScreenDelay" value="3000" />
-<plugin name="cordova-plugin-battery-status" source="npm" />
+<plugin name="cordova-plugin-device" source="npm" />
 <plugin name="cordova-plugin-network-information" source="npm" />
 </widget>
         

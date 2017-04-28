@@ -783,12 +783,6 @@ function showPosition(position)
     document.getElementById("longitude").innerHTML = longitude;
 }
 
-function BatteryLevel(info)
-{
-    window.addEventListener("batterystatus", onBatteryStatus, false);
-   document.getElementById("level").innerHTML ="Battery  Level: " + info.level + "%";
-}
-
 function NetworkConnection()
 {
     var networkState = navigator.connection.type;

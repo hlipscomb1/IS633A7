@@ -6,6 +6,28 @@
     <script src="js/a7.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/a7.css" />
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script>
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+
+        var element = document.getElementById('info');
+
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
+
+                            'Device Model: '    + device.model    + '<br />' +
+
+                            'Device Cordova: '  + device.cordova  + '<br />' +
+
+                            'Device Platform: ' + device.platform + '<br />' +
+
+                            'Device UUID: '     + device.uuid     + '<br />' +
+
+                            'Device Version: '  + device.version  + '<br />';
+
+    }
+
+    </script>
 </head>
 
 <body>
@@ -130,10 +152,9 @@
         <br>
     </section>
 <section id="eighth">
-        <h2>Battery Status</h2>
-        <button onclick="BatteryLevel()">Get Battery Status</button>
+        <h2>Device Information</h2>
         <br>
-        <label id="level"></label>
+        <label id="info"></label>
         <br>
     </section>
     <section id="ninth">

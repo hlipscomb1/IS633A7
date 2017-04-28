@@ -49,6 +49,6 @@
 </platform>
 <preference name="SplashScreenDelay" value="3000" />
 <plugin name="cordova-plugin-battery-status" source="npm" />
-<plugin name="cordova-plugin-photo-library" source="npm" />
+<plugin name="cordova-plugin-network-information" source="npm" />
 </widget>
         
